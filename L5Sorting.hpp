@@ -15,34 +15,34 @@ void Sorting(Array arr[], int n) // реалізація метода сортування злиттям за спад
  int* DinamicNewSortingMatrix = new int[Rigt_block - Br_left];
  while (Br_left + Left_block < Br_mid && Br_mid + Right_block < Rigt_block)
  {
- if (arr[i].dArr[Br_left + Left_block] > arr[i].dArr[Br_mid + Right_block])
+ if (arr[i].ArrBlock[Br_left + Left_block] > arr[i].ArrBlock[Br_mid + Right_block])
  {
- DinamicNewSortingMatrix[Left_block + Right_block] = arr[i].dArr[Br_left +
+ DinamicNewSortingMatrix[Left_block + Right_block] = arr[i].ArrBlock[Br_left +
 Left_block];
  Left_block++;
  }
 else
 {
- DinamicNewSortingMatrix[Left_block + Right_block] = arr[i].dArr[Br_mid +
+ DinamicNewSortingMatrix[Left_block + Right_block] = arr[i].ArrBlock[Br_mid +
 Right_block];
  Right_block++;
  }
  }
  while (Br_left + Left_block < Br_mid)
  {
- DinamicNewSortingMatrix[Left_block + Right_block] = arr[i].dArr[Br_left +
+ DinamicNewSortingMatrix[Left_block + Right_block] = arr[i].ArrBlock[Br_left +
 Left_block];
  Left_block++;
  }
  while (Br_mid + Right_block < Rigt_block)
  {
- DinamicNewSortingMatrix[Left_block + Right_block] = arr[i].dArr[Br_mid +
+ DinamicNewSortingMatrix[Left_block + Right_block] = arr[i].ArrBlock[Br_mid +
 Right_block];
  Right_block++;
  }
  for (int FinallMerge = 0; FinallMerge < Left_block + Right_block; FinallMerge++)
  {
- arr[i].dArr[Br_left + FinallMerge] = DinamicNewSortingMatrix[FinallMerge];
+ arr[i].ArrBlock[Br_left + FinallMerge] = DinamicNewSortingMatrix[FinallMerge];
  }
  delete DinamicNewSortingMatrix;
  }
